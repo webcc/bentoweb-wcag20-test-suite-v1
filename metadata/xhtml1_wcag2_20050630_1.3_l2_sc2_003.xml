@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml" id="xhtml1_wcag2_20050630_1.3_l2_sc2_003" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1 http://bentoweb.org/refs/schemas/tcdl1.xsd http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd" xmlns="http://bentoweb.org/refs/TCDL1.1">
+  <!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata xml:lang="en">
+    <description>A page with a form that has two <html:code>fieldset</html:code>s. The first <html:code>fieldset</html:code> contains a group of radio buttons, and the user is required to make a choice (there is no default).
+      Instructions above the form explain that required fields have labels in red. The red text for the first <html:code>fieldset</html:code> is created by means of <html:acronym>CSS</html:acronym> and does includes a character cue ("**") to tell the user that the field is required, 
+      so it is possible for users of current screen reader to find out which form fields are required. The form does not rely on the user's ability to recognize red text
+    </description>
+    <title>Red text with <html:code>CSS</html:code> to indicate required form fields</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-09-30</date>
+    <status>accepted for end user evaluation</status>
+  </formalMetadata>
+  <technology xml:lang="en">
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label>
+        <html:acronym>XHTML</html:acronym>&#8482; 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+    </recommendation>
+    <recommendation xlink:href="http://www.w3.org/TR/1998/REC-CSS2-19980512">
+      <label>Cascading Style Sheets, level 2 - <html:acronym>CSS</html:acronym>2 Specification</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to pass because information about required form fields is conveyed through color and a character cue.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>enduser</testMode>
+      </testModes>
+      <scenario id="s01">
+        <userGuidance xml:lang="en">
+          <p>For this test, you need a browser that supports <html:acronym>CSS</html:acronym>, and you need to have <html:acronym>CSS</html:acronym> enabled.</p>
+        </userGuidance>
+        <questions>
+          <multipleChoice select="multiple" display="horizontal">
+            <questionText xml:lang="en">
+              <p>Which of the form fields are marked as required ? Multiple selections are possible.</p>
+            </questionText>
+            <choice>
+              <label xml:lang="en">Destination</label>
+              <value>1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">Transport</label>
+              <value>-1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">Don't know</label>
+              <value>-2</value>
+            </choice>
+          </multipleChoice>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="4" type="Braille display" />
+          <UserAgent minimumLevel="3" type="browser" />
+          <Device minimumLevel="3" type="PC" />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02">
+        <userGuidance xml:lang="en">
+          <p>For this test, you need a browser that supports <html:acronym>CSS</html:acronym>, and you need to have <html:acronym>CSS</html:acronym> enabled.</p>
+        </userGuidance>
+        <questions>
+          <multipleChoice select="multiple" display="horizontal">
+            <questionText xml:lang="en">
+              <p>Which of the form fields are marked as required ? Multiple selections are possible.</p>
+            </questionText>
+            <choice>
+              <label xml:lang="en">Destination</label>
+              <value>1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">Transport</label>
+              <value>-1</value>
+            </choice>
+            <choice>
+              <label xml:lang="en">Don't know</label>
+              <value>-2</value>
+            </choice>
+          </multipleChoice>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="4" type="screenreader" />
+          <UserAgent minimumLevel="3" type="browser" />
+          <Device minimumLevel="3" type="PC" />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/xhtml1_wcag2_20050630_1.3_l2_sc2_003.html" hrefLang="en" />
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_1.3_content-presentation-structure-without-color" primary="yes">
+      <locations expectedResult="pass">
+        <location line="30" column="25" xpath="/:html:/body/:form/:fieldset[1]/:p" />
+      </locations>
+      <functionalOutcome>
+        <p>The user does not need to be able to recognize the color red in order to know which fields are required.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>The code uses the class attribute and a <html:acronym>CSS</html:acronym> style sheet, and a character cue to indicate required fields.</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings>
+</testCaseDescription>

@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml" id="xhtml1_wcag2_20050630_3.2_l2_sc3_016" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1 http://bentoweb.org/refs/schemas/tcdl1.xsd http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd" xmlns="http://bentoweb.org/refs/TCDL1.1">
+  <!--
+		Copyright &#169; BenToWeb Consortium 2004-2007
+		
+		Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+		not use this file except in compliance with the License. You may obtain
+		a copy of the License at http://bentoweb.org/refs/LICENSE.html
+		
+		Unless required by applicable law or agreed to in writing, software
+		distributed under the License is distributed on an "AS IS" BASIS,
+		WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+		See the License for the specific language governing permissions and
+		limitations under the License.
+	-->
+  <formalMetadata xml:lang="en">
+    <description>
+			Document containing a input field; when the input field
+			changes a new file is loaded into the browser.
+		</description>
+    <title>Change of content - text input onchange</title>
+    <dc:creator>johannes.koch@fit.fraunhofer.de</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-08-25</date>
+    <status>draft</status>
+  </formalMetadata>
+  <technology xml:lang="en">
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label>
+        <html:acronym>XHTML</html:acronym>
+				&#8482; 1.0 The Extensible HyperText Markup Language
+				(Second Edition)
+			</label>
+      <testElements>
+        <testElement>
+          <elementName localname="input" namespace="http://www.w3.org/1999/xhtml" />
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/interact/scripts.html#adef-onchange" />
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>
+				The test is intended to fail because a change in input
+				field state changes the content.
+			</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>enduser</testMode>
+      </testModes>
+      <scenario id="s01">
+        <userGuidance xml:lang="en">
+          <p>Please fill with some text the first input field. Then move the focus from the input field either by clicking on page or by tabbing and then try to change the input field value again. </p>
+        </userGuidance>
+        <questions>
+          <likertScale display="horizontal">
+            <questionText xml:lang="en">
+              <p>Have you been distracted trying to do the task? </p>
+            </questionText>
+            <likertLevel number="1">
+              <label xml:lang="en">not at all - did not notice any</label>
+              <value>1</value>
+            </likertLevel>
+            <likertLevel number="2">
+              <label xml:lang="en">a bit - it confused me for a second</label>
+              <value>2</value>
+            </likertLevel>
+            <likertLevel number="3">
+              <label xml:lang="en">enough - it confused me for a while</label>
+              <value>3</value>
+            </likertLevel>
+            <likertLevel number="4">
+              <label xml:lang="en">quite enough - it was difficult for me
+								to do the task</label>
+              <value>4</value>
+            </likertLevel>
+            <likertLevel number="5">
+              <label xml:lang="en">very much - I could not do the task</label>
+              <value>5</value>
+            </likertLevel>
+          </likertScale>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader" />
+          <UserAgent minimumLevel="3" type="browser" />
+        </experience>
+      </scenario>
+      <scenario id="s02">
+        <userGuidance xml:lang="en">
+          <p>Please fill with some text the first input field. Then move the focus from the input field either by clicking on page or by tabbing and then try to change the input field value again. </p>
+        </userGuidance>
+        <questions>
+          <likertScale display="horizontal">
+            <questionText xml:lang="en">
+              <p>Have you been distracted trying to do the task? </p>
+            </questionText>
+            <likertLevel number="1">
+              <label xml:lang="en">not at all - did not notice any</label>
+              <value>1</value>
+            </likertLevel>
+            <likertLevel number="2">
+              <label xml:lang="en">a bit - it confused me for a second</label>
+              <value>2</value>
+            </likertLevel>
+            <likertLevel number="3">
+              <label xml:lang="en">enough - it confused me for a while</label>
+              <value>3</value>
+            </likertLevel>
+            <likertLevel number="4">
+              <label xml:lang="en">quite enough - it was difficult for me
+								to do the task</label>
+              <value>4</value>
+            </likertLevel>
+            <likertLevel number="5">
+              <label xml:lang="en">very much - I could not do the task</label>
+              <value>5</value>
+            </likertLevel>
+          </likertScale>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="3" type="browser" />
+        </experience>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/xhtml1_wcag2_20050630_3.2_l2_sc3_016.html" hrefLang="en" />
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_3.2_consistent-behavior-unpredictable-change" primary="yes">
+      <locations expectedResult="fail">
+        <location line="9" column="110" xpath="/h:html/h:body/h:p[1]/h:input" />
+      </locations>
+      <functionalOutcome>
+        <p>Change of content onchange.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>
+					The JavaScript in the onchange attribute causes the
+					browser to load another document.
+				</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings>
+</testCaseDescription>

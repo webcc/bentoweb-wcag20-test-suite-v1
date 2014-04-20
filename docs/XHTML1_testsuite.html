@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>The BenToWeb XHTML 1.0 + CSS 2.0 Test Suite</title>
+  <meta name="DC.Description"
+  content="The BenToWeb XHTML 1.0 + CSS 2.0 Test Suite" />
+  <meta name="DC.Type" scheme="DCMIType" content="Text" />
+  <meta name="DC.Creator" content="Christophe Strobbe" />
+  <meta name="DC.Publisher"
+  content="BenToWeb Consortium (http://www.bentoweb.org/)" />
+  <meta name="DC.Rights"
+  content="Copyright BenToWeb Consortium 2007 (http://www.bentoweb.org/)" />
+  <meta name="DC.Rights.accessRights" content="public" />
+  <meta name="DC.Date" content="2006-02-14" />
+  <meta name="DC.Identifier"
+  content="http://bentoweb.org/refs/TCDL1.1/index.rddl" />
+  <meta name="DC.Language" scheme="ISO 639-1" content="en" />
+  <meta name="robots" content="all" />
+</head>
+
+<body>
+<h1>The BenToWeb <acronym>XHTML</acronym> 1.0 + <acronym>CSS</acronym> 2.0
+Test Suite</h1>
+
+<p>BenToWeb's <acronym>XHTML</acronym> + <acronym>CSS</acronym> test suite is
+a suite of test files and accompanying metadata for the <a
+href="http://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines
+2.0</a> (<acronym>WCAG</acronym> 2.0). The test suite serves two purposes:</p>
+<ul>
+  <li>a test suite is a way of proving the testability of a specification;
+    testability is a requirement for specifications in the “Recommendation
+    track” of the <acronym>W3C</acronym> Process;</li>
+  <li>a test suite can also serve as a basis for benchmarking Web
+    accessibility evaluation software (also known as <acronym>ERT</acronym>):
+    comparing the <acronym>ERT</acronym>'s evaluation report with the test
+    case metadata shows which <acronym>WCAG</acronym> 2.0 success criteria
+    are supported by the tool and where the tool produces false positives or
+    negatives.</li>
+</ul>
+
+<p>The <acronym>XHTML</acronym> + <acronym>CSS</acronym> test suite contains
+over 470 test cases and over 500 test files. Each test case covers one
+success criterion, with at least one test that fails the success criterion
+and at least one that passes.The test files use <acronym>XHTML</acronym> 1.0;
+<acronym>CSS</acronym> 2.0 is also used where this is relevant to the success
+criterion.</p>
+
+<p>The test cases map to the <a
+href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/">30 June 2005 Working
+Draft of <acronym>WCAG</acronym> 2.0</a>, the current draft at the time when
+the test suite was developed. Some success criteria in that draft were
+unfinished or open to interpretation. Newer drafts may change, move, delete
+or split success criteria, introduce new success criteria, adopt another
+numbering system etcetera. This is why it was necessary to map the test cases
+to a specific draft of <acronym>WCAG</acronym> 2.0 instead of
+“<acronym>WCAG</acronym> 2.0 generally”. This also means that the mapping
+of the test cases to success criteria in the final <acronym>WCAG</acronym>
+2.0 recommendation will be different from the current one.</p>
+
+<p>There are several types of test cases:</p>
+<ul>
+  <li>simple test cases use one file to test one success criterion;</li>
+  <li>compound test cases use multiple files to test one success
+  criterion;</li>
+  <li>complex test cases use one or more files test test multiple success
+    criteria.</li>
+</ul>
+
+<p>The <acronym>XHTML</acronym> + <acronym>CSS</acronym> test suite does not
+contain complex test cases, even though a test case that is intended to pass
+a certain success criterion may fail another success criterion that is not
+relevant to the test. The test case metadata (written in a specific
+<acronym>XML</acronym> vocabulary developed for this purpose, <a
+href="http://bentoweb.org/refs/TCDL1.1">Test Case Description Language -
+<acronym>TCDL</acronym></a>) provide a means to explicitly indicate that some
+other specific success criteria are not relevant to a test case. For example:
+a test case for blinking content (Guideline 2.2 Level 2 Success Criterion 1
+in <acronym>WCAG</acronym> 2.0) might use the <code>&lt;blink&gt;</code>
+element, which is not valid <acronym>XHTML</acronym>; in this case, the
+metadata can indicate that validation is not a relevant criterion for the
+test.</p>
+</body>
+</html>

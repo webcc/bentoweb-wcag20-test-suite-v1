@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Filter Test Cases by type" default="init" basedir=".">
+	<description>
+		This ant script generates a list of test cases for every
+		type of testing mode.
+    </description>
+
+	<!-- Defining the properties -->
+	<property name="TSModule" value="." />
+	<property name="metadataDir" value="metadata" />
+	<property name="enduser" value="&lt;testMode&gt;enduser&lt;/testMode&gt;"/>
+	<property name="oneExpert" value="&lt;testMode&gt;oneExpert&lt;/testMode&gt;"/>
+	<property name="experts" value="&lt;testMode&gt;experts&lt;/testMode&gt;"/>
+	<property name="automatic" value="&lt;testMode&gt;automatic&lt;/testMode&gt;"/>
+
+	<target name="init" depends="enduser,oneExpert,experts,automatic" />
+
+	<target name="enduser">
+		<filterXmlFileByString dir="${basedir}/${TSModule}/${metadataDir}"
+			outputfile="${basedir}/enduser.txt" text="${enduser}" />
+	</target>
+
+	<target name="oneExpert">
+		<filterXmlFileByString dir="${basedir}/${TSModule}/${metadataDir}"
+			outputfile="${basedir}/oneExpert.txt" text="${oneExpert}" />
+	</target>
+
+	<target name="experts">
+		<filterXmlFileByString dir="${basedir}/${TSModule}/${metadataDir}"
+			outputfile="${basedir}/experts.txt" text="${experts}" />
+	</target>
+
+	<target name="automatic">
+		<filterXmlFileByString dir="${basedir}/${TSModule}/${metadataDir}"
+			outputfile="${basedir}/automatic.txt" text="${automatic}" />
+	</target>
+
+	<!-- Macro to get the names of the filtered files -->
+	<macrodef name="filterXmlFileByString">
+		<attribute name="dir" />
+		<attribute name="outputfile" />
+		<attribute name="text" />
+
+		<sequential>
+			<delete file="@{outputfile}" verbose="true" />
+			<apply executable="ls" dir="@{dir}" output="@{outputfile}"
+				relative="true" append="true" failonerror="true">
+				<fileset dir="@{dir}">
+					<contains text="@{text}" />
+					<include name="*.xml" />
+				</fileset>
+			</apply>
+		</sequential>
+	</macrodef>
+</project>

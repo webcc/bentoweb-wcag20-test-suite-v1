@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml" id="xhtml1_wcag2_20050630_4.1_l3_sc1_011" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1 http://bentoweb.org/refs/schemas/tcdl1.xsd http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd" xmlns="http://bentoweb.org/refs/TCDL1.1">
+  <!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata>
+    <description>An <html:acronym>XHTML</html:acronym> file that is well-formed but not valid: although the markup is structurally correct, the ID values for the header cells in <html:code>thead</html:code> (table header) are illegal because they start with a number instead of a letter or underscore.
+      It is not clear how assistive technology responds to this. However, since the header cells define their scope by means of the <html:code>scope</html:code> attribute, assistive technologies should not have problems to find the associations between data cells and their headers.
+    </description>
+    <title>Validity error: ID attributes start with number</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-10-05</date>
+    <status>accepted for end user evaluation</status>
+  </formalMetadata>
+  <technology>
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label>
+        <html:acronym>XHTML</html:acronym>&#8482; 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="table" namespace="http://www.w3.org/1999/xhtml" />
+          <specReference xlink:href="http://www.w3.org/TR/2002/REC-xhtml1-20020801/#strict">Strictly Conforming Documents</specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This is a test case is intended to fail because the file is well-formed but invalid. However, it is not clear if this causes problems for assistive tecnologies.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>enduser</testMode>
+      </testModes>
+      <scenario id="s01">
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>When navigating the table cells, can you find out the row and column headers for each cell?</p>
+            </questionText>
+            <questionText xml:lang="de">
+              <p>If you can't find out the row and column headers, does this make the table unreadable? Please comment.</p>
+            </questionText>
+            <optionYes value="-1" />
+            <optionNo value="1" />
+            <optionOther xml:lang="en">
+              <p>If not, what happened?</p>
+            </optionOther>
+            <optionOther xml:lang="de">
+              <p>I don't know</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="screenreader" />
+          <UserAgent minimumLevel="1" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/xhtml1_wcag2_20050630_4.1_l3_sc1_011.html" hrefLang="en" />
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050211_internal_4.1_use-spec-avoid-spec-no-exception" primary="yes">
+      <locations expectedResult="fail">
+        <location line="19" column="23" xpath="/:html/:body/:table/:thead/:tr/:th[1]/@id" />
+        <location line="20" column="23" xpath="/:html/:body/:table/:thead/:tr/:th[2]/@id" />
+        <location line="21" column="23" xpath="/:html/:body/:table/:thead/:tr/:th[3]/@id" />
+        <location line="22" column="23" xpath="/:html/:body/:table/:thead/:tr/:th[4]/@id" />
+        <location line="27" column="11" xpath="/:html/:body/:table/:tbody/:tr[1]/:th/@headers" />
+        <location line="28" column="11" xpath="/:html/:body/:table/:tbody/:tr[1]/:td[1]/@headers" />
+        <location line="29" column="11" xpath="/:html/:body/:table/:tbody/:tr[1]/:td[2]/@headers" />
+        <location line="30" column="11" xpath="/:html/:body/:table/:tbody/:tr[1]/:td[3]/@headers" />
+        <location line="33" column="11" xpath="/:html/:body/:table/:tbody/:tr[2]/:th/@headers" />
+        <location line="34" column="11" xpath="/:html/:body/:table/:tbody/:tr[2]/:td[1]/@headers" />
+        <location line="35" column="11" xpath="/:html/:body/:table/:tbody/:tr[2]/:td[2]/@headers" />
+        <location line="36" column="11" xpath="/:html/:body/:table/:tbody/:tr[2]/:td[3]/@headers" />
+        <location line="39" column="11" xpath="/:html/:body/:table/:tbody/:tr[3]/:th/@headers" />
+        <location line="40" column="11" xpath="/:html/:body/:table/:tbody/:tr[3]/:td[1]/@headers" />
+        <location line="41" column="11" xpath="/:html/:body/:table/:tbody/:tr[3]/:td[2]/@headers" />
+        <location line="42" column="11" xpath="/:html/:body/:table/:tbody/:tr[3]/:td[3]/@headers" />
+        <location line="45" column="11" xpath="/:html/:body/:table/:tbody/:tr[4]/:th/@headers" />
+        <location line="46" column="11" xpath="/:html/:body/:table/:tbody/:tr[4]/:td[1]/@headers" />
+        <location line="47" column="11" xpath="/:html/:body/:table/:tbody/:tr[4]/:td[2]/@headers" />
+        <location line="48" column="11" xpath="/:html/:body/:table/:tbody/:tr[4]/:td[3]/@headers" />
+        <location line="51" column="11" xpath="/:html/:body/:table/:tbody/:tr[5]/:th/@headers" />
+        <location line="52" column="11" xpath="/:html/:body/:table/:tbody/:tr[5]/:td[1]/@headers" />
+        <location line="53" column="11" xpath="/:html/:body/:table/:tbody/:tr[5]/:td[2]/@headers" />
+        <location line="54" column="11" xpath="/:html/:body/:table/:tbody/:tr[5]/:td[3]/@headers" />
+        <location line="57" column="11" xpath="/:html/:body/:table/:tbody/:tr[6]/:th/@headers" />
+        <location line="58" column="11" xpath="/:html/:body/:table/:tbody/:tr[6]/:td[1]/@headers" />
+        <location line="59" column="11" xpath="/:html/:body/:table/:tbody/:tr[6]/:td[2]/@headers" />
+        <location line="60" column="11" xpath="/:html/:body/:table/:tbody/:tr[6]/:td[3]/@headers" />
+        <location line="63" column="11" xpath="/:html/:body/:table/:tbody/:tr[7]/:th/@headers" />
+        <location line="64" column="11" xpath="/:html/:body/:table/:tbody/:tr[7]/:td[1]/@headers" />
+        <location line="65" column="11" xpath="/:html/:body/:table/:tbody/:tr[7]/:td[2]/@headers" />
+        <location line="66" column="11" xpath="/:html/:body/:table/:tbody/:tr[7]/:td[3]/@headers" />
+      </locations>
+      <functionalOutcome>
+        <p>Depending on the browser or assistive technology, the user may not be able to find the row and column headers when navigating through the cells of the table.</p>
+      </functionalOutcome>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings>
+</testCaseDescription>

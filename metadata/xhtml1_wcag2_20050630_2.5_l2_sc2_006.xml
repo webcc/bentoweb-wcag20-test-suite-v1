@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml" id="xhtml1_wcag2_20050630_2.5_l2_sc2_006" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1 http://bentoweb.org/refs/schemas/tcdl1.xsd http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd" xmlns="http://bentoweb.org/refs/TCDL1.1">
+  <!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata xml:lang="en">
+    <description>Document containing some form controls entering and selecting data. If required fields are not filled in or entered data is invalid, error messages are presented.</description>
+    <title>Avoiding mistakes and making it easy to correct them</title>
+    <dc:creator>johannes.koch@fit.fraunhofer.de</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2006-03-16</date>
+    <status>accepted for end user evaluation</status>
+  </formalMetadata>
+  <technology xml:lang="en">
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label>
+        <html:acronym>XHTML</html:acronym>&#8482; 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>The document is intended to pass, because errors are provided in a proper way.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>enduser</testMode>
+      </testModes>
+      <scenario id="s01">
+        <userGuidance xml:lang="en">
+          <p>Imagine you want to book a flight via Internet.To do that you need to provide your first name, surname and destination of the flight to the airline in an on-line form. Email address and date of departure are also required. Because it is the goal of this task to find an appropriate way to present errors in filling out a form, you are asked to fill in <html:strong>wrongly</html:strong> the field for email address and date. That means enter whatever you like in the fields for first name, surname etc. but </p>
+          <p>- type in an email address without the @ sign</p>
+          <p>- and only the letter 'a' in the date field.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Was the presentation of the error messages adequate?</p>
+            </questionText>
+            <optionYes value="1" />
+            <optionNo value="-1" />
+            <optionOther xml:lang="en">
+              <p>Please make here suggestions on how to improve the error feedback. All comments are welcome!</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="screenreader" />
+          <UserAgent minimumLevel="1" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02">
+        <userGuidance xml:lang="en">
+          <p>Imagine you want to book a flight via Internet. To do that you need to provide your first name, surname and destination of the flight to the airline in an on-line form. Email address and date of departure are also required. Because it is the goal of this task to find an appropriate way to present errors in filling out a form, you are asked to fill in <html:strong>wrongly</html:strong> the field for email address and date. That means enter whatever you like in the fields for first name, surname etc. but</p>
+          <p>- type in an email address without the @ sign</p>
+          <p>- and only the letter 'a' in the date field.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Was the presentation of the error messages well done?</p>
+            </questionText>
+            <optionYes value="1" />
+            <optionNo value="-1" />
+            <optionOther xml:lang="en">
+              <p>Please make here suggestions on how to improve the error feedback. All comments are welcome!</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="3" type="talking browser" />
+        </experience>
+        <disabilities>
+          <disability>intellectual disability</disability>
+          <disability>dyslexia</disability>
+          <disability>other</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s03">
+        <userGuidance xml:lang="en">
+          <p>Imagine you want to book a flight via Internet. To do that you need to provide your first name, surname and destination of the flight to the airline in an on-line form. Email address and date of departure are also required. Because it is the goal of this task to find an appropriate way to present errors in filling out a form, you are asked to fill in <html:strong>wrongly</html:strong> the field for email address and date. That means enter whatever you like in the fields for first name, surname etc. but</p>
+          <p>- type in an email address without the @ sign</p>
+          <p>- and only the letter 'a' in the date field.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Was the presentation of the error messages adequate?</p>
+            </questionText>
+            <optionYes value="1" />
+            <optionNo value="-1" />
+            <optionOther xml:lang="en">
+              <p>Please make here suggestions on how to improve the error feedback. All comments are welcome!</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="screenreader" />
+          <AssistiveTechnology minimumLevel="3" type="Braille display" />
+          <UserAgent minimumLevel="1" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s04">
+        <userGuidance xml:lang="en">
+          <p>Imagine you want to book a flight via Internet. To do that you need to provide your first name, surname and destination of the flight to the airline in an on-line form. Email address and date of departure are also required. Because it is the goal of this task to find an appropriate way to present errors in filling out a form, you are asked to fill in <html:strong>wrongly</html:strong> the field for email address and date. That means enter whatever you like in the fields for first name, surname etc. but</p>
+          <p>- type in an email address without the @ sign</p>
+          <p>- and only the letter 'a' in the date field.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Was the presentation of the error messages adequate?</p>
+            </questionText>
+            <optionYes value="1" />
+            <optionNo value="-1" />
+            <optionOther xml:lang="en">
+              <p>Please make here suggestions on how to improve the error feedback. All comments are welcome!</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="magnification software" />
+          <UserAgent minimumLevel="1" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s05">
+        <userGuidance xml:lang="en">
+          <p>Imagine you want to book a flight via Internet. To do that you need to provide your first name, surname and destination of the flight to the airline in an on-line form. Email address and date of departure are also required. Because it is the goal of this task to find an appropriate way to present errors in filling out a form, you are asked to fill in <html:strong>wrongly</html:strong> the field for email address and date. That means enter whatever you like in the fields for first name, surname etc. but</p>
+          <p>- type in an email address without the @ sign</p>
+          <p>- and only the letter 'a' in the date field.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Was the presentation of the error messages adequate?</p>
+            </questionText>
+            <optionYes value="1" />
+            <optionNo value="-1" />
+            <optionOther xml:lang="en">
+              <p>Please make here suggestions on how to improve the error feedback. All comments are welcome!</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="2" type="alternative input devices" />
+          <UserAgent minimumLevel="1" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s06">
+        <userGuidance xml:lang="en">
+          <p>Imagine you want to book a flight via Internet. To do that you need to provide your first name, surname and destination of the flight to the airline in an on-line form. Email address and date of departure are also required. Because it is the goal of this task to find an appropriate way to present errors in filling out a form, you are asked to fill in <html:strong>wrongly</html:strong> the field for email address and date. That means enter whatever you like in the fields for first name, surname etc. but</p>
+          <p>- type in an email address without the @ sign</p>
+          <p>- and only the letter 'a' in the date field.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Was the presentation of the error messages adequate?</p>
+            </questionText>
+            <optionYes value="1" />
+            <optionNo value="-1" />
+            <optionOther xml:lang="en">
+              <p>Please make here suggestions on how to improve the error feedback. All comments are welcome!</p>
+              <p />
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="1" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>intellectual disability</disability>
+          <disability>deafness</disability>
+          <disability>dyslexia</disability>
+          <disability>hard of hearing</disability>
+          <disability>motor impairment</disability>
+          <disability>other</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/xhtml1_wcag2_20050630_2.5_l2_sc2_006.jsp" hrefLang="en" />
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_2.5_minimize-error-suggestions" primary="yes">
+      <locations expectedResult="pass" />
+      <functionalOutcome>
+        <p>User is provided with error messages.</p>
+      </functionalOutcome>
+      <techComment>
+        <p />
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings>
+</testCaseDescription>

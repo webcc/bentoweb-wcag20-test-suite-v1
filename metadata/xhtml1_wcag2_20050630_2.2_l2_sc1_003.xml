@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml" id="xhtml1_wcag2_20050630_2.2_l2_sc1_003" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1 http://bentoweb.org/refs/schemas/tcdl1.xsd http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd" xmlns="http://bentoweb.org/refs/TCDL1.1">
+  <!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata xml:lang="en">
+    <description>A document with "normal" content and a paragraph with blinking content. The blinking effect is created with the <html:acronym>CSS</html:acronym> rule <html:code>text-decoration: blink</html:code>.  This property is not supported by all browsers (for example Internet Explorer 6) and cannot be turned off in some other browsers (including Mozilla 1.7.3 and Firefox 1.0).</description>
+    <title>Blinking with <html:acronym>CSS</html:acronym> to highlight important information</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2005-09-29</date>
+    <status>accepted for end user evaluation</status>
+  </formalMetadata>
+  <technology xml:lang="en">
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label>
+        <html:acronym>XHTML</html:acronym>&#8482; 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+    </recommendation>
+    <recommendation xlink:href="http://www.w3.org/TR/1998/REC-CSS2-19980512/">
+      <label>Cascading Style Sheets, level 2</label>
+      <testElements>
+        <testElement>
+          <elementName localname="text-decoration" />
+          <specReference xlink:href="http://www.w3.org/TR/1998/REC-CSS2-19980512/text.html#propdef-text-decoration">
+                text-decoration
+              </specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to fail because the blinking does not stop after three seconds and there is no mechanism in the content to turn it off. Only the blinking paragraph is tested here, not the other parts of the page.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>enduser</testMode>
+      </testModes>
+      <scenario id="s01">
+        <userGuidance xml:lang="en">
+          <p>For this test, you need a browser that supports <html:acronym>CSS</html:acronym>, and you need to have <html:acronym>CSS</html:acronym> enabled.</p>
+          <p>Note : it is possible that you are not able to perform the requested action.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Did you see any of the text blinking ?</p>
+            </questionText>
+            <optionYes value="1" />
+            <optionNo value="-1" />
+            <optionOther xml:lang="en">
+              <p>If yes, were you able to stop it and how ?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="4" type="screenreader with magnification" />
+          <UserAgent minimumLevel="3" type="browser" product="Mozilla" />
+          <UserAgent minimumLevel="3" version="7" type="browser" product="Netscape" />
+          <UserAgent minimumLevel="3" type="browser" product="Firefox" />
+          <UserAgent minimumLevel="3" type="browser" product="Safari" />
+          <UserAgent minimumLevel="3" type="browser" product="Opera" />
+          <Device minimumLevel="3" type="PC" />
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02">
+        <userGuidance xml:lang="en">
+          <p>For this test, you need a browser that supports <html:acronym>CSS</html:acronym>, and you need to have <html:acronym>CSS</html:acronym> enabled.</p>
+          <p>Note : it is possible that you are not able to perform the requested action.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Did you see any of the text blinking ?</p>
+            </questionText>
+            <optionYes value="1" />
+            <optionNo value="-1" />
+            <optionOther xml:lang="en">
+              <p>If yes, were you able to stop it and how ?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="4" type="speech and hearing support software" />
+          <UserAgent minimumLevel="3" type="browser" product="Mozilla" />
+          <UserAgent minimumLevel="3" type="browser" product="Firefox" />
+          <UserAgent minimumLevel="3" type="browser" product="Safari" />
+          <UserAgent minimumLevel="3" type="browser" product="Opera" />
+          <UserAgent minimumLevel="3" type="browser" product="Netscape" />
+          <Device minimumLevel="3" type="PC" />
+        </experience>
+        <disabilities>
+          <disability>intellectual disability</disability>
+          <disability>dyslexia</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s03">
+        <userGuidance xml:lang="en">
+          <p>For this test, you need a browser that supports <html:acronym>CSS</html:acronym>, and you need to have <html:acronym>CSS</html:acronym> enabled.</p>
+          <p>Note : it is possible that you are not able to perform the requested action.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Did you see any of the text blinking ?</p>
+            </questionText>
+            <optionYes value="1" />
+            <optionNo value="-1" />
+            <optionOther xml:lang="en">
+              <p>If yes, were you able to stop it and how ?</p>
+            </optionOther>
+            <space>
+              <rows>4</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="alternative input devices" product="alternative keyboard" />
+          <AssistiveTechnology minimumLevel="3" type="alternative input devices" product="headmouse / tracking device" />
+          <AssistiveTechnology minimumLevel="3" type="alternative input devices" product="Head pointer" />
+          <AssistiveTechnology minimumLevel="3" type="alternative input devices" product="HMC EasyMouse" />
+          <AssistiveTechnology minimumLevel="3" type="alternative input devices" product="Lucy laser keyboard" />
+          <AssistiveTechnology minimumLevel="3" type="alternative input devices" product="QPointer" />
+          <UserAgent minimumLevel="3" type="browser" product="Mozilla" />
+          <UserAgent minimumLevel="3" type="browser" product="Firefox" />
+          <UserAgent minimumLevel="3" type="browser" product="Safari" />
+          <UserAgent minimumLevel="3" type="browser" product="Opera" />
+          <UserAgent minimumLevel="3" type="browser" product="Netscape" />
+          <Device minimumLevel="3" type="PC" />
+        </experience>
+        <disabilities>
+          <disability>dexterity impairment</disability>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/xhtml1_wcag2_20050630_2.2_l2_sc1_003.html" hrefLang="en" />
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_2.2_time-limits-blink" primary="yes">
+      <locations expectedResult="cannotTell">
+        <location line="8" column="29" xpath="/:html/:head/:style" />
+      </locations>
+      <functionalOutcome>
+        <p>The instructions in the last paragraph blink for more than three seconds, unless the user turns off the blinking in their browser.</p>
+      </functionalOutcome>
+      <techComment>
+        <p>Conforming user agents are not required to support the value "blink" for the property <html:code>text-decoration</html:code> (http://www.w3.org/TR/1998/REC-CSS2-19980512/text.html#propdef-text-decoration).</p>
+        <p>Internet Explorer does not seem to support the value "blink" for the property <html:code>text-decoration</html:code>, because it does not cause any blinking.
+            In Opera 8.02, the blinking can be turned off by switching to "user mode". In Mozilla 1.7.3 and Firefox 1.0, the "Preferences" or "Options" dialogue does not contain a mechanism to turn off blinking.
+          </p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings>
+</testCaseDescription>

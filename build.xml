@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<project name="BenToWebXHTML1TCDs" default="ValidateXML" basedir=".">
+
+  <target name="TCDL1_to_TCDL1.1">
+    <echo message="Make sure that you use SAXON 6.x as XSLT engine ! Check you classpath ! "></echo> 
+    <xslt 
+      style="../TCDL/xslt/tcdl1_to_tcdl1.1.xslt"
+      processor="trax"
+      basedir="metadata/"
+      destdir="metadata/"
+      includes="*.xml"   
+      extension=".tcdl" >
+    </xslt>
+  </target>
+
+
+  <!-- code below adapted from 
+    Anthony Coates: Running Multiple XSLT Engines with Ant (11 December 2002)
+    http://www.xml.com/pub/a/2002/12/11/ant-xml.html 
+  -->
+  <!--target name="test_TCDL1_to_TCDL1.1">
+    <xslt 
+      style="../TCDL/xslt/tcdl1_to_tcdl1.1.xslt"
+      processor="trax"
+      in="metadata/xhtml1_wcag2_20050630_1.1_l1_sc1_014.xml"
+      out="metadata/xhtml1_wcag2_20050630_1.1_l1_sc1_014.xml.tcdl"  >
+    </xslt>
+  </target-->
+
+
+  <!-- Adapted from Hack 91 from "XML Hacks" by Michael Fitzgerald. -->
+  <target name="ValidateXML">
+    <echo message="Validating XML files with Xerces." />
+    <xmlvalidate 
+      classname="org.apache.xerces.parsers.SAXParser"
+      classpath="C:\java\xerces-2_7_0\xml-apis.jar;C:\java\xerces-2_7_0\xercesImpl.jar"
+      failonerror="false">
+      <attribute name="http://apache.org/xml/features/validation/schema" value="true" />
+      <attribute name="http://xml.org/sax/features/namespaces" value="true" />
+      <fileset dir="metadata/" includes="*.xml" />
+    </xmlvalidate>
+  </target>
+
+
+  <!-- For more info on checking wellformedness, see 
+    http://ant.apache.org/manual/OptionalTasks/xmlvalidate.html. 
+  -->
+  <target name="CheckWellformednessXML">
+    <echo message="Checking wellformedness of XML files." />
+    <xmlvalidate lenient="yes">
+      <fileset dir="metadata/" includes="*.xml" />
+    </xmlvalidate>
+  </target>
+
+       
+  <!-- Code below adapted from: http://www.juddsolutions.com/xslt.html. -->
+  <target name="BatchXSLTTransform">
+    <style basedir="${out.src.dir}"
+        destdir="${out.dir}/"
+        includes="*.xml"
+        excludes="include/*.*"
+        style="${src.xsl.dir}/tcdl1_to_tcdl1.1.xslt"
+        extension=".html">
+      <param name="src.name" expression="${src.name}"/>
+    </style>
+  </target>
+
+
+  <!-- Replace task: see "Ant: The Definitive Guide" p. 184-185. -->
+  <target name="CorrectTCDL1.1Namespaces">
+    <!--replace dir="metadata" includes="*.tcdl" excludes="*.xml">
+      <replacetoken>http://bentoweb.org/refs/TCDL1.1.1</replacetoken>
+     <replacevalue>http://bentoweb.org/refs/TCDL1</replacevalue>   
+    </replace-->  
+    <replace dir="metadata" includes="*.xml">
+      <replacetoken>xmlns:tcdl="http://bentoweb.org/refs/TCDL1.1" </replacetoken>
+      <replacevalue></replacevalue>
+    </replace>  
+    <replace dir="metadata" includes="*.xml">
+      <replacetoken>xmlns="http://bentoweb.org/refs/TCDL1"</replacetoken>
+      <replacevalue>xmlns="http://bentoweb.org/refs/TCDL1.1"</replacevalue>
+    </replace>
+    <replace dir="metadata" includes="*.xml">
+      <replacetoken>xmlns:btw="http://bentoweb.org/refs/TCDL1" </replacetoken>
+      <replacevalue></replacevalue>
+    </replace>
+    <replace dir="metadata" includes="*.xml">
+      <replacefilter token="http://bentoweb.org/refs/TCDL1 http://canada.esat.kuleuven.be/bentoweb/tcdl1.xsd " value="" />
+      <!--replacefilter token="TCDL1.1_oldns.css" value="TCDL1.1.css" /-->
+      <replacefilter token="btw:hrefLang" value="hrefLang" />
+      <replacefilter token="…" value="&amp;#8230;" />
+    </replace>
+    <replace dir="metadata" includes="*.xml">
+      <replacetoken>
+    
+</replacetoken>
+     <replacevalue>
+</replacevalue>
+    </replace>
+  </target>
+
+
+  <target name="ChangeXHTMLnamespace">
+    <replace dir="metadata" includes="*.xml">
+      <replacetoken>namespace="http://www.w3.org/TR/REC-html40"</replacetoken>
+      <replacevalue>namespace="http://www.w3.org/1999/xhtml"</replacevalue>   
+    </replace>
+    <replace dir="metadata" includes="*.xml">
+      <replacetoken>xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/"</replacetoken>
+      <replacevalue>xlink:href="http://www.w3.org/TR/xhtml1/"</replacevalue>   
+    </replace>
+    <replace dir="metadata" includes="*.xml">
+      <replacetoken><![CDATA[<html:acronym>HTML</html:acronym> 4.01 Specification</label>]]></replacetoken>
+      <replacevalue><![CDATA[<html:acronym>XHTML</html:acronym>&#174; 1.0 The Extensible HyperText Markup Language (Second Edition)</label>]]></replacevalue>   
+    </replace>
+  </target>
+
+  <target name="AddNamespaceMappings">
+    <replace dir="metadata" includes="*.xml">
+      <replacetoken><![CDATA[</testCaseDescription>]]></replacetoken>
+      <replacevalue><![CDATA[  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/TR/xhtml1/" />
+  </namespaceMappings>
+</testCaseDescription>]]></replacevalue>   
+    </replace>
+  </target>
+
+
+  <target name="CorrectXHTML1Namespaces">
+    <replace dir="metadata" includes="*.xml">
+      <replacetoken><![CDATA[nsURI="http://www.w3.org/TR/xhtml1/"]]></replacetoken>
+     <replacevalue><![CDATA[nsURI="http://www.w3.org/1999/xhtml"]]></replacevalue>
+    </replace>
+  </target>
+
+  <target name="AddStatusToFormalMetadata">
+    <replace dir="metadata" includes="*.xml">
+      <replacetoken><![CDATA[</date>]]></replacetoken>
+      <replacevalue><![CDATA[</date>
+      <status>draft</status>]]></replacevalue>
+    </replace>
+  </target>
+
+  <!-- @TODO This target does not work !!! -->
+  <target name="RemoveEmptyLines">
+    <!-- Windows style line breaks (CRLF) -->
+    <replace dir="metadata" includes="*.tcdl" excludes="*.xml">
+	  <replacetoken>&#13;&#10;&#13;&#10;</replacetoken>
+      <replacevalue>&#13;&#10;</replacevalue>
+    </replace>
+    <replace dir="metadata" includes="*.tcdl" excludes="*.xml">
+      <replacetoken>&#13;&#10;    &#13;&#10;</replacetoken>
+      <replacevalue>&#13;&#10;</replacevalue>
+    </replace> 
+    <replace dir="metadata" includes="*.tcdl" excludes="*.xml">
+      <replacetoken>&#13;&#10;        &#13;&#10;</replacetoken>
+      <replacevalue>&#13;&#10;</replacevalue>
+    </replace>
+    <!-- Unix style line breaks (LF) --> 
+    <replace dir="metadata" includes="*.tcdl" excludes="*.xml">
+      <replacetoken>&#10;&#10;</replacetoken>
+      <replacevalue>&#10;</replacevalue>
+    </replace>
+    <replace dir="metadata" includes="*.tcdl" excludes="*.xml">
+      <replacetoken>&#10;    &#10;</replacetoken>
+      <replacevalue>&#10;</replacevalue>
+    </replace> 
+    <replace dir="metadata" includes="*.tcdl" excludes="*.xml">
+      <replacetoken>&#10;        &#10;</replacetoken>
+      <replacevalue>&#10;</replacevalue>
+    </replace> 
+  </target>  
+
+  <!-- Replace task: see "Ant: The Definitive Guide" p. 184-185. -->
+  <!-- Removes the CSS reference(s) from the TCDL 1.1 files.
+    The CDATA sections are necessary escape the processing instruction code.
+  -->   
+  <target name="RemoveCSSfromTCDL1.1">
+    <replace dir="metadata" includes="*.tcdl" excludes="*.xml">
+      <replacetoken><![CDATA[<?xml-stylesheet href="../../TCDL/css/TCDL1.1_oldns.css" title="Basic stylesheet" type="text/css"?>]]></replacetoken>
+     <replacevalue></replacevalue>   
+    </replace>
+    <replace dir="metadata" includes="*.tcdl" excludes="*.xml">
+      <replacetoken><![CDATA[<?xml-stylesheet href="../../TCDL/css/TCDL1.1.css" title="Basic stylesheet" type="text/css"?>]]></replacetoken>
+     <replacevalue></replacevalue>   
+    </replace>
+  </target>
+
+  <!-- Add license info to TCDL 1.1 files (2006-02-14) -->
+  <target name="AddLicenseToTCDL1.1">
+    <replace dir="metadata" includes="*.xml">
+      <replacetoken><![CDATA[<formalMetadata xml:lang="en">]]></replacetoken>
+  <replacevalue><![CDATA[
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2006
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata xml:lang="en">]]></replacevalue>
+    </replace>
+  </target>
+
+  <!-- Add license info to HTML files (2006-02-14) -->
+  <target name="AddLicenseToHTML">
+    <replace dir="testfiles" includes="*.html">
+      <replacetoken><![CDATA[</html>]]></replacetoken>
+  <replacevalue><![CDATA[
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2006
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+</html>]]></replacevalue>
+    </replace>
+  </target>
+
+  <!-- Add license info to JSP files (2006-02-14) -->
+  <target name="AddLicenseToJSP">
+    <replace dir="testfiles" includes="*.jsp">
+      <replacetoken><![CDATA[</html>]]></replacetoken>
+  <replacevalue><![CDATA[
+<!--
+ Copyright &#169; BenToWeb Consortium 2004-2006
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+</html>]]></replacevalue>
+    </replace>
+  </target>
+
+  <!-- Filter task: see "Ant: The Definitive Guide" p. 72ff, p. 149-151. -->   
+  <!--target name="FilterTCDL1.1Namespaces">
+    <fileset dir="metadata">
+      <include name="*.tcdl" />
+      <excludes name="*.xml" />   
+    </fileset>  
+    <filterset begintoken="" endtoken="">
+      <filter token="http://www.bentoweb.org/TCDL1" value="http://www.bentoweb.org/TCDL1.1" />
+      <filter token="TCDL1.1_oldns.css" value="TCDL1.1.css" />
+    </filterset>  
+  </target-->
+</project>

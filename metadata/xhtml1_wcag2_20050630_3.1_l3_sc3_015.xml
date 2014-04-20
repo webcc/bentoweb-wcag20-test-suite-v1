@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<testCaseDescription xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml" id="xhtml1_wcag2_20050630_3.1_l3_sc3_015" xml:lang="en" xsi:schemaLocation="http://bentoweb.org/refs/TCDL1 http://bentoweb.org/refs/schemas/tcdl1.xsd http://bentoweb.org/refs/TCDL1.1 http://bentoweb.org/refs/schemas/tcdl1.1.xsd http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/simpledc20021212.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd" xmlns="http://bentoweb.org/refs/TCDL1.1">
+  <!--
+ Copyright &#169; BenToWeb Consortium 2004-2007
+
+ Licensed under the BenToWeb License, Version 1.0 (the "License"); you may
+ not use this file except in compliance with the License. You may obtain
+ a copy of the License at http://bentoweb.org/refs/LICENSE.html
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+  <formalMetadata xml:lang="en">
+    <description>A short text with an acronym; the expansion of the acronym is provided in the <html:code>title</html:code> attribute of the <html:code>acronym</html:code> element, but because the expansion — as opposed to the acronym itself — is not well known, the acronym is also repeated in the <html:code>title</html:code> attribute.</description>
+    <title>Acronym with obscure expansion in <html:code>title</html:code> attribute</title>
+    <dc:creator>Christophe.Strobbe@esat.kuleuven.be</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights>Copyright BenToWeb 2004-2007</dc:rights>
+    <date>2006-03-15</date>
+    <status>accepted for end user evaluation</status>
+  </formalMetadata>
+  <technology xml:lang="en">
+    <recommendation xlink:href="http://www.w3.org/TR/xhtml1/">
+      <label>
+        <html:acronym>XHTML</html:acronym>&#8482; 1.0 The Extensible HyperText Markup Language (Second Edition)</label>
+      <testElements>
+        <testElement>
+          <elementName localname="acronym" namespace="http://www.w3.org/1999/xhtml" />
+          <specReference xlink:href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/text.html#edef-ACRONYM">
+                Phrase elements: <html:code>EM</html:code>, <html:code>STRONG</html:code>, <html:code>DFN</html:code>, <html:code>CODE</html:code>, <html:code>SAMP</html:code>, <html:code>KBD</html:code>, <html:code>VAR</html:code>, <html:code>CITE</html:code>, <html:code>ABBR</html:code>, and <html:code>ACRONYM</html:code></specReference>
+        </testElement>
+      </testElements>
+    </recommendation>
+  </technology>
+  <testCase complexity="atomic">
+    <purpose>
+      <p>This test case is intended to pass because an expansion of the acronym is available.</p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>enduser</testMode>
+      </testModes>
+      <scenario id="s01">
+        <userGuidance xml:lang="en">
+          <p>In this test you will see a short text with an acronym (an abbreviation like cm for centimetre).  The expansion of the acronym will appear by mouse hovering.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Was the mechanism of presenting the expansion adequate ?</p>
+            </questionText>
+            <optionYes value="1" />
+            <optionNo value="-1" />
+            <optionOther xml:lang="en">
+              <p>Please provide your comments in regard to possible difficulties with this presentation mechanism. Suggestions on improvements are welcome as well:</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="alternative input devices" />
+          <UserAgent minimumLevel="2" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>dexterity impairment</disability>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s02">
+        <userGuidance xml:lang="en">
+          <p>In this test you will see a short text with an acronym (an abbreviation like cm for centimetre).  You may have to adapt the verbosity settings of your screen reader so that the expansion will be read to you. </p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Was the mechanism of presenting the expansion adequate ?</p>
+            </questionText>
+            <optionYes value="1" />
+            <optionNo value="-1" />
+            <optionOther xml:lang="en">
+              <p>Please provide your comments in regard to possible difficulties with this presentation mechanism. Suggestions on improvements are welcome as well:</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="screenreader" />
+          <UserAgent minimumLevel="2" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s03">
+        <userGuidance xml:lang="en">
+          <p>In this test you will see a short text with an acronym (an abbreviation like cm for centimetre).  To get the expansion of the acronym you may have to adapt the verbosity settings of your screen reader or Braille display. </p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Was the mechanism of presenting the expansion adequate ?</p>
+            </questionText>
+            <optionYes value="1" />
+            <optionNo value="-1" />
+            <optionOther xml:lang="en">
+              <p>Please provide your comments in regard to possible difficulties with this presentation mechanism. Suggestions on improvements are welcome as well:</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="Braille display" />
+          <AssistiveTechnology minimumLevel="3" type="screenreader" />
+          <UserAgent minimumLevel="2" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>blindness</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s04">
+        <userGuidance xml:lang="en">
+          <p>In this test you will see a short text with an acronym (an abbreviation like cm for centimetre).  The expansion of the acronym will appear by mouse hovering.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Was the mechanism of presenting the expansion adequate ?</p>
+            </questionText>
+            <optionYes value="1" />
+            <optionNo value="-1" />
+            <optionOther xml:lang="en">
+              <p>Please provide your comments in regard to possible difficulties with this presentation mechanism. Suggestions on improvements are welcome as well:</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <AssistiveTechnology minimumLevel="3" type="magnification software" />
+          <UserAgent minimumLevel="2" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>low vision</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s05">
+        <userGuidance xml:lang="en">
+          <p>In this test you will see a short text with an acronym (an abbreviation like cm for centimetre).  The expansion of the acronym will appear when you move the mouse cursor over the acronym. </p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Do you think the presentation of the expansion was well done ?</p>
+            </questionText>
+            <optionYes value="1" />
+            <optionNo value="-1" />
+            <optionOther xml:lang="en">
+              <p>Please provide comments if you had difficulties with the presentation of the expansion. Suggestions on improvements are welcome as well:</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="2" type="talking browser" />
+        </experience>
+        <disabilities>
+          <disability>intellectual disability</disability>
+          <disability>dyslexia</disability>
+        </disabilities>
+      </scenario>
+      <scenario id="s06">
+        <userGuidance xml:lang="en">
+          <p>In this test you will see a short text with an acronym (an abbreviation like cm for centimetre).  The expansion of the acronym will appear when you move the mouse cursor over the acronym.</p>
+        </userGuidance>
+        <questions>
+          <yesNoOpenQuestion>
+            <questionText xml:lang="en">
+              <p>Do you think the presentation of the expansion was well done ?</p>
+            </questionText>
+            <optionYes value="1" />
+            <optionNo value="-1" />
+            <optionOther xml:lang="en">
+              <p>Please provide comments if you had difficulties with the presentation of the expansion. Suggestions on improvements are welcome as well:</p>
+            </optionOther>
+            <space>
+              <rows>10</rows>
+              <columns>30</columns>
+            </space>
+          </yesNoOpenQuestion>
+        </questions>
+        <experience>
+          <UserAgent minimumLevel="2" type="browser" />
+        </experience>
+        <disabilities>
+          <disability>intellectual disability</disability>
+          <disability>deafness</disability>
+          <disability>dexterity impairment</disability>
+          <disability>dyslexia</disability>
+          <disability>motor impairment</disability>
+        </disabilities>
+      </scenario>
+    </requiredTests>
+    <files>
+      <file xlink:href="../testfiles/xhtml1_wcag2_20050630_3.1_l3_sc3_015.html" hrefLang="en" />
+    </files>
+  </testCase>
+  <rules>
+    <rule id="http://bentoweb.org/refs/rulesets.xml#WCAG2_20050630_3.1_meaning-located" primary="yes">
+      <locations expectedResult="pass">
+        <location line="9" column="39" xpath="/:html/:body/:p/:acronym/@title" />
+      </locations>
+      <functionalOutcome>
+        <p>The user can find the expanded forms of abbreviations and/or acronyms, but in this case, the expanded form may confuse the user because most people only know the abbreviated form. So the acronym is repeated in the "expanded form".</p>
+      </functionalOutcome>
+      <techComment>
+        <p>This is a slightly modified version of 3.1_l3_sc3_006.</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings>
+</testCaseDescription>
